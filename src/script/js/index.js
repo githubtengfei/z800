@@ -137,10 +137,13 @@
         }
         init() {
 
-            if ($.cookie('sid')) {
+            if ($.cookie('sid') && $.cookie('zhe800accountNumber')) {
                 this.sidarr = $.cookie('sid').split(',');
                 this.cartnum.html(this.sidarr.length);
                 this.sidercartnum.html(this.sidarr.length)
+            } else {
+                this.cartnum.html(0);
+                this.sidercartnum.html(0)
             }
 
         }

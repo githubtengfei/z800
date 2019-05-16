@@ -161,36 +161,35 @@
             var element = ev.target || ev.srcElement;
             this.tr = this.table.find('tr');
             this.inputCheck = this.tr.find('.check');
-
-            if (element.nodeName == 'INPUT' && $(element).hasClass('check')) {
-                if (11111111111111111111111111) {
-                    this.settleAccounts.css({
-                        'background': '#e11e19',
-                        'color': '#fff',
-                    });
-                    this.close_an_account.css('border-color', '#e11e19');
-                } else {
-                    this.settleAccounts.css({
-                        'background': '#ddd',
-                        'color': '#999',
-                    });
-                    this.close_an_account.css('border-color', '#f3f3f3');
-                }
-
-            }
-            /* this.totalPrices += parseFloat(this.tr.find('.check:checked').parent('td').siblings('.money').html())
-
-            console.log(this.totalPrices)
-            this.prices.html(this.totalPrices.toFixed(2)) */
+            // this.totalPrices += parseFloat(this.tr.find('.check:checked').parent('td').siblings('.money').html())
+            // this.prices.html(this.totalPrices.toFixed(2))
 
 
             if (this.tr.length == this.tr.find('.check:checked').length) {
                 this.check_all.prop('checked', true);
                 this.check_all_bottom.prop('checked', true);
+                this.settleAccounts.css({
+                    'background': '#e11e19',
+                    'color': '#fff',
+                });
+                this.close_an_account.css('border-color', '#e11e19');
 
             } else {
                 this.check_all.prop('checked', false);
                 this.check_all_bottom.prop('checked', false);
+                this.settleAccounts.css({
+                    'background': '#ddd',
+                    'color': '#999',
+                });
+                this.close_an_account.css('border-color', '#f3f3f3');
+            }
+
+            if (this.tr.find('.check:checked').length >= 1) {
+                this.settleAccounts.css({
+                    'background': '#e11e19',
+                    'color': '#fff',
+                });
+                this.close_an_account.css('border-color', '#e11e19');
             }
 
         }
@@ -225,12 +224,12 @@
             this.numarr = $.cookie('number').split(',');
             this.colorarr = $.cookie('color').split(',');
             if (element.nodeName == 'A' && $(element).hasClass('delete')) {
-                $(element).parents('tr').attr('class')
-                    // console.log($(element).parents('tr').attr('class'))
-                this.delsid = $(element).parents('tr').attr('class').split('_')[1]
-                    // console.log(this.delsid)
-                    // console.log(this.sidarr.indexOf(this.delsid)) //0
-                this.del = this.sidarr.indexOf(this.delsid)
+                $(element).parents('tr').attr('class');
+                // console.log($(element).parents('tr').attr('class'))
+                this.delsid = $(element).parents('tr').attr('class').split('_')[1];
+                // console.log(this.delsid)
+                // console.log(this.sidarr.indexOf(this.delsid)) //0
+                this.del = this.sidarr.indexOf(this.delsid);
                 this.sidarr.splice(this.del, 1);
                 this.sizearr.splice(this.del, 1);
                 this.numarr.splice(this.del, 1);

@@ -146,6 +146,28 @@ a {
   color: #e02f2f;
 }
 
+#header ul .usercookie {
+  position: relative;
+}
+#header ul .usercookie em {
+  position: absolute;
+  height: 16px;
+  right: -1px;
+  font-style: normal;
+  background: #fafafa;
+  color: #999;
+  text-align: right;
+  line-height: 16px;
+  padding: 0 20px;
+  cursor: pointer;
+  opacity: 0;
+  display: none;
+}
+
+#header ul .usercookie:hover em {
+  display: block;
+}
+
 /* 手机下载二维码 */
 #header ul li:nth-child(7) {
   position: relative;

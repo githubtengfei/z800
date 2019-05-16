@@ -6,8 +6,8 @@ function search_sug(data) {
     arr = data.response.docs
     var str = ""
     for (var i = 0; i < arr.length; i++) {
-        console.log(arr[i].word)
-        str = str + `<li><a href="https://search.zhe800.com/search?keyword=${arr[i].word}"> ${arr[i].word}<span>约<em>${arr[i].count}</em>条结果</span></a></li >`
+        // console.log(arr[i].word)
+        str = str + `<li><a href="https://search.zhe800.com/search?keyword=${arr[i].word}" target="_block"> ${arr[i].word}<span>约<em>${arr[i].count}</em>条结果</span></a></li >`
     }
     oUl.style.display = 'block'
     oUl.innerHTML = str
@@ -32,7 +32,9 @@ class Searchdata {
             _this.show()
         });
         this.search.blur(function() {
-            _this.hide()
+            setTimeout(() => {
+                _this.hide()
+            }, 200);
         });
     }
     show() {
@@ -41,7 +43,6 @@ class Searchdata {
     hide() {
         this.search_data.hide()
     }
-
 }
 new Searchdata().init()
 
