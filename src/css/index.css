@@ -64,6 +64,7 @@ a {
   border: 0;
   position: absolute;
   left: 124px;
+  text-indent: -9999px;
 }
 #activity_navigation .border {
   width: 100%;
