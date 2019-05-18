@@ -217,7 +217,7 @@
             if (this.checkbox.get(0).checked) {
                 if (this.telswitch == true && this.passwordswitch == true && this.confirmswitch == true && this.dragswitch == true) {
                     $.ajax({
-                        url: "http://10.31.163.20/zhe800/projectname/php/register.php",
+                        url: "../php/register.php",
                         type: "POST",
                         data: {
                             usertel: _this.input.eq(0).val(),
@@ -226,9 +226,9 @@
                         success: function(data) {
                             console.log(data)
                             if (data == 'true') {
-                                window.location.href = 'http://10.31.163.20/zhe800/projectname/src/login.html';
+                                window.location.href = 'login.html';
                             } else {
-                                _this.label.eq(0).html('用户名已存在，<a href="http://10.31.163.20/zhe800/projectname/src/login.html">去登录</a>');
+                                _this.label.eq(0).html('用户名已存在，<a href="login.html">去登录</a>');
                                 _this.label.eq(0).css('color', '#e02f2f');
                             }
                         }

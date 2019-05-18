@@ -63,7 +63,7 @@
 
                 } else {
                     alert('还没登录，请登录');
-                    window.location.href = "http://10.31.163.20/zhe800/projectname/src/login.html";
+                    window.location.href = "login.html";
                 }
 
                 // console.log(_this.cookiesidarr)
@@ -77,7 +77,7 @@
         getdata() {
                 let _this = this;
                 $.ajax({
-                    url: "http://10.31.163.20/zhe800/projectname/php/getdetail.php",
+                    url: "../php/getdetail.php",
                     data: {
                         id: _this.sid
                     },
@@ -236,7 +236,7 @@
                     $.cookie('number', this.cookienumberarr, { expires: 7 });
                     $.cookie('color', this.cookiecolorarr, { expires: 7 });
                     $.cookie('size', this.cookiesizearr, { expires: 7 });
-                    window.location.href = "http://10.31.163.20/zhe800/projectname/src/cart.html";
+                    window.location.href = "cart.html";
 
                 } else {
                     this.cookiesidarr.push(this.sid);
@@ -251,7 +251,7 @@
                     // $.cookie('color', this.clickcolor, { expires: 7 });
                     // $.cookie('size', this.clicksize, { expires: 7 });
                     // $.cookie('number', this.number.find('input').val(), { expires: 7 });
-                    window.location.href = "http://10.31.163.20/zhe800/projectname/src/cart.html";
+                    window.location.href = "cart.html";
                 }
 
             } else {
@@ -293,12 +293,12 @@
         }
         init() {
             if ($.cookie('zhe800accountNumber')) {
-                this.carthref.attr('href', 'http://10.31.163.20/zhe800/projectname/src/cart.html');
+                this.carthref.attr('href', 'cart.html');
             } else {
                 this.carthref.on('click', function() {
                     alert('还没登录，请登录');
                 });
-                this.carthref.attr('href', 'http://10.31.163.20/zhe800/projectname/src/login.html');
+                this.carthref.attr('href', 'login.html');
             }
         }
     }

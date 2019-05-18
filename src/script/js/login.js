@@ -70,7 +70,7 @@
             let _this = this;
             if (this.userswitch == true && this.passswitch == true && this.dragswitch == true) {
                 $.ajax({
-                    url: "http://10.31.163.20/zhe800/projectname/php/login.php",
+                    url: "../php/login.php",
                     type: "POST",
                     data: {
                         user: _this.user.val(),
@@ -80,7 +80,7 @@
                         // console.log(Boolean(data))
                         if (Boolean(data)) {
                             $.cookie('zhe800accountNumber', _this.user.val(), { expires: 7 });
-                            window.location.href = "http://10.31.163.20/zhe800/projectname/src/index.html"
+                            window.location.href = "index.html"
                         } else {
                             alert('用户名或密码错误,请重试')
                         }

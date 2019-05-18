@@ -29,7 +29,7 @@
             // console.log(this.sidarr)
             $.each(this.sidarr, function(index, value) {
                 $.ajax({
-                    url: "http://10.31.163.20/zhe800/projectname/php/cartgetdata.php",
+                    url: "../php/cartgetdata.php",
                     data: {
                         id: value,
                     },

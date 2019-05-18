@@ -97,7 +97,7 @@
         getdata() {
             let _this = this;
             $.ajax({
-                url: "http://10.31.163.20/zhe800/projectname/php/homePagegetdata.php",
+                url: "../php/homePagegetdata.php",
                 dataType: 'json',
                 success: function(data) {
                     /*  console.log(data) */
@@ -159,12 +159,12 @@
         }
         init() {
             if ($.cookie('zhe800accountNumber')) {
-                this.carthref.attr('href', 'http://10.31.163.20/zhe800/projectname/src/cart.html');
+                this.carthref.attr('href', 'cart.html');
             } else {
                 this.carthref.on('click', function() {
                     alert('还没登录，请登录');
                 });
-                this.carthref.attr('href', 'http://10.31.163.20/zhe800/projectname/src/login.html');
+                this.carthref.attr('href', 'login.html');
             }
         }
     }
